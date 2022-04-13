@@ -9,16 +9,9 @@ typedef struct listNode{
     struct linstNode *link;
 } listNode;
 
-void print_list(listNode *head){
-    listNode *p;
-	for (int i = 0; i < 10; i++) {
-		printf("현재 차례=%s \n", p->data);
-		p = p->link;
-	}
-}
 
 listNode* insert_first(listNode *head, element data){
-    listNode* node = (listNode *)malloc(sizeof(listNode));
+    listNode *node = (listNode *)malloc(sizeof(listNode));
     strcpy(node->data, data); //string복사! node->data에 매개변수 data값 복사
     if(head == NULL){
         head = node; //head 에 node값 복사한 다음에
@@ -32,12 +25,16 @@ listNode* insert_first(listNode *head, element data){
 int main() {
     listNode *head = NULL;
 
+
     head = insert_first(head, "an");
     head = insert_first(head, "kim");
     head = insert_first(head, "min");
     head = insert_first(head, "jung");
 
-    print_list(head);
-
+		listNode* p = head;
+	for (int i = 0; i < 10; i++) {
+		printf("현재 차례=%s \n", p->data);
+		p = p->link;
+	}
     return 0;
 }
