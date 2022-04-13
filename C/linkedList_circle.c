@@ -52,10 +52,10 @@ listNode* insert_last(listNode* head, element data){
 //실행
 int main(void){
     listNode *head = NULL; //head라는 포인터변수의 값은 NULL
-    head = insert_last(head, 20);
-    head = insert_last(head, 30);
-    head = insert_last(head, 40);
-    head = insert_first(head, 10);
+    head = insert_last(head, 20); //head: 20의 주소를 가리키는 상태, data: 20
+    head = insert_last(head, 30); //head: 20의 주소를 가리키는 상태, data: 30
+    head = insert_last(head, 40); //head: 20의 주소를 가리키는 상태, data: 40
+    head = insert_first(head, 10); //head: 10의 주소를 가리키는 상태, data: 10
     print_list(head);
     return 0;
 }
