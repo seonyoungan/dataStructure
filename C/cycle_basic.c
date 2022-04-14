@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int recursive(int n);
+int f_recursive(int n);
 int f_repeat(int n);
 
 int main(){
