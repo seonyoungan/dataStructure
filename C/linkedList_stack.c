@@ -53,8 +53,8 @@ element pop(linkedStackType *s){
     } else{
         stackNode *temp = s->top; //포인터변수 temp의 값에 현재위치 복사
         int data = temp->data; //temp의 data값은 data에 복사
-        s->top = s->top->link; //top은 top의 링크(다음데이터)를 가리킴
-        free(temp); //메모리해제
+        s->top = s->top->link; //top이 link(=temp노드의 link)를 s->top이 가리키게 됨
+        free(temp); //temp노드 메모리해제
         return data; //변수 data 반환
     }
 }
@@ -65,8 +65,8 @@ int main(void){
     push(&s, 1); print_stack(&s); // 1 삽입, 출력
     push(&s, 2); print_stack(&s); // 2 삽입, 출력
     push(&s, 3); print_stack(&s); // 3 삽입, 출력
-    pop(&s); print_stack(&s); //마지막에 들어온 값 삭제
-    pop(&s); print_stack(&s); //마지막에 들어온 값 삭제
-    pop(&s); print_stack(&s); //마지막에 들어온 값 삭제
+    pop(&s); print_stack(&s);
+    pop(&s); print_stack(&s);
+    pop(&s); print_stack(&s);
     
 }
