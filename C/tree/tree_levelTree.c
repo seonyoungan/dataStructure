@@ -53,16 +53,16 @@ element dequeue(QueueType *q){
 
 void level_order(TreeNode *ptr){
     QueueType *q;
-    init_queue(&q); //초기화
+    init_queue(q); //초기화
     if(ptr== NULL) return;
-    enqueue(&q, ptr); //삽입
-    while(!is_empty(&q)){
-        ptr = dequeue(&q);
+    enqueue(q, ptr); //삽입
+    while(!is_empty(q)){
+        ptr = dequeue(q);
         printf("[%d]", ptr->data);
         if(ptr->left)
-            enqueue(&q, ptr->left);
+            enqueue(q, ptr->left);
         if(ptr->right)
-            enqueue(&q, ptr->right);
+            enqueue(q, ptr->right);
     }   
 }
 
@@ -78,8 +78,8 @@ TreeNode n6 = { 15, &n2,  &n5 };
 TreeNode *root = &n6;
 
 int main(void){
-	printf("중위 순회=");
-	inorder_iter(root);
+	printf("레벨 순회=");
+	level_order(root);
 	printf("\n");
 	return 0;
 }
