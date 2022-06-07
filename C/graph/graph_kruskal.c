@@ -95,17 +95,19 @@ int main() {
     g = (GraphType *)malloc(sizeof(GraphType));
     graph_init(g);
     
-    insert_edge(g, 0, 1, 3);
-    insert_edge(g, 2, 4, 5);
-    insert_edge(g, 1, 4, 6);
+    insert_edge(g, 1, 2, 3);
     insert_edge(g, 1, 3, 17);
-    insert_edge(g, 3, 5, 10);
-    insert_edge(g, 4, 5, 9);
-    insert_edge(g, 3, 6, 8);
-    insert_edge(g, 5, 6, 4);
-    insert_edge(g, 6, 7, 14);
-    insert_edge(g, 5, 7, 2);
+    insert_edge(g, 1, 4, 6);
+    insert_edge(g, 2, 4, 5);
     insert_edge(g, 2, 7, 12);
+    insert_edge(g, 3, 5, 10);
+    insert_edge(g, 3, 6, 8);
+    insert_edge(g, 4, 5, 9);
+    insert_edge(g, 5, 6, 4);
+    insert_edge(g, 5, 7, 2);
+    insert_edge(g, 6, 7, 14);
+    
+
     
     kruskal(g);
     free(g);
